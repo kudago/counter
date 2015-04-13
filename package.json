@@ -1,0 +1,42 @@
+{
+  "name": "counter-component",
+  "version": "1.0.0",
+  "description": "Simple counter component",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "domify": "^1.3.0",
+    "stringify": "^0.0.4"
+  },
+  "browserify": {
+    "transform": "stringify"
+  },
+  "component": {
+    "styles": [
+      "counter.css"
+    ],
+    "templates": [
+      "digit.html"
+    ],
+    "scripts": {
+      "counter/index.js": "index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/counter.git"
+  },
+  "keywords": [
+    "counter",
+    "timer",
+    "countdown"
+  ],
+  "author": "tj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/component/counter/issues"
+  },
+  "homepage": "https://github.com/component/counter"
+}
