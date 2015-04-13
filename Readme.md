@@ -12,9 +12,40 @@ $ npm i component-counter
 
 ## API
 
-### new Counter(el, [options]);
+### new Counter
+
+Initialize a new counter.
+
+```js
+var Counter = require('component-counter');
+var counter = new Counter;
+document.documentElement.appendChild(counter.el);
+```
 
 
+### Counter.prototype.digits(n)
+
+Set the total number of digits to `n`.
+
+
+### Counter.prototype.addDigit()
+
+Add a digit element.
+
+
+### Counter.prototype.ensureDigits()
+
+Ensure at least `n` digits are available.
+
+
+### Counter.prototype.updateDigit(i, val)
+
+Update digit `i` with `val`.
+
+
+### Counter.prototype.update(n)
+
+Update count to `n`.
 
 
 ## License
