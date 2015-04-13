@@ -6,23 +6,16 @@
   "directories": {
     "test": "test"
   },
+  "scripts": {
+    "watch": "watchify -r ./index.js:counter -d -o build/build.js",
+    "build": "browserify -r ./index.js:counter > build/build.js"
+  },
   "dependencies": {
     "domify": "^1.3.0",
-    "stringify": "^0.0.4"
+    "html-browserify": "0.0.4"
   },
   "browserify": {
-    "transform": "stringify"
-  },
-  "component": {
-    "styles": [
-      "counter.css"
-    ],
-    "templates": [
-      "digit.html"
-    ],
-    "scripts": {
-      "counter/index.js": "index.js"
-    }
+    "transform": "html-browserify"
   },
   "repository": {
     "type": "git",

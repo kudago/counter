@@ -1,4 +1,3 @@
-
 # Counter
 
   Counter component.
@@ -8,10 +7,15 @@
 ## Installation
 
 ```
-$ component install component/counter
+$ npm i component-counter
 ```
 
-   ... finish me ...
+## API
+
+### new Counter(el, [options]);
+
+
+
 
 ## License
 

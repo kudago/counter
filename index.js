@@ -3,13 +3,14 @@
  */
 
 var domify = require('domify')
-  , digit = require('./digit');
+  , digit = require('./digit.html');
 
 /**
  * Expose `Counter`.
  */
 
 module.exports = Counter;
+
 
 /**
  * Initialize a new `Counter`.
@@ -23,6 +24,7 @@ function Counter() {
   this.n = 0;
   this.digits(2);
 }
+
 
 /**
  * Set the total number of digits to `n`.
@@ -76,16 +78,7 @@ Counter.prototype.updateDigit = function(i, val){
   var n = parseInt(val, 10) + 1;
   if (n > 9) n = 0;
 
-  var curr = el.querySelector('.counter-top span').textContent;
-  el.querySelector('.counter-next span').textContent = n;
-  el.querySelector('.counter-top span').textContent = val;
-  el.querySelector('.counter-bottom span').textContent = val;
-
-  if (val == curr) return;
-  el.classList.add('flip');
-  setTimeout(function(){
-    el.classList.remove('flip');
-  }, 200);
+  el.textContent = val;
 };
 
 /**
