@@ -18,10 +18,19 @@ module.exports = Counter;
  * @api public
  */
 
-function Counter() {
-  this.el = domify('<div class="counter"></div>');
+function Counter(el) {
+  if (!(this instanceof Counter)) return new Counter(el);
+
+  //container
+  this.el = el || domify('<div class="counter"></div>');
+
+  //list of digit elements
   this._digits = [];
+
+  //display value
   this.n = 0;
+
+  //ensure two digits by default
   this.digits(2);
 }
 
