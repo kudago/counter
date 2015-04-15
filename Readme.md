@@ -12,15 +12,25 @@ $ npm i component-counter
 
 ## API
 
-### new Counter
+### new Counter([element], [options])
 
-Initialize a new counter.
+Initialize a new counter on an optional element with optional options.
 
 ```js
 var Counter = require('component-counter');
-var counter = new Counter;
+var counter = new Counter();
 document.documentElement.appendChild(counter.el);
 ```
+
+#### Options
+
+##### digitClass
+
+A class to add to each digit.
+
+### digits
+
+Initial digits number to create.
 
 
 ### Counter.prototype.digits(n)

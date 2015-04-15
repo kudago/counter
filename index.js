@@ -18,11 +18,16 @@ module.exports = Counter;
  * @api public
  */
 
-function Counter(el) {
-  if (!(this instanceof Counter)) return new Counter(el);
+function Counter(el, options) {
+  if (this instanceof Counter) return new Counter(el, options);
+
+  options = options || {};
 
   //container
   this.el = el || domify('<div class="counter"></div>');
+
+  //save options
+  this.digitClass = options.digitClass;
 
   //list of digit elements
   this._digits = [];
@@ -31,7 +36,7 @@ function Counter(el) {
   this.n = 0;
 
   //ensure two digits by default
-  this.digits(2);
+  this.digits(options.digits);
 }
 
 
@@ -57,6 +62,9 @@ Counter.prototype.digits = function(n){
 
 Counter.prototype.addDigit = function(){
   var el = domify(digit);
+
+  if (this.digitClass) el.classList.add(this.digitClass);
+
   this._digits.push(el);
   this.el.appendChild(el);
 };
