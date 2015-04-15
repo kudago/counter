@@ -36,7 +36,7 @@ function Counter(el, options) {
   this.n = 0;
 
   //ensure two digits by default
-  this.digits(options.digits);
+  this.digits(options.digits || 2);
 }
 
 

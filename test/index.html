@@ -15,8 +15,8 @@
     <script src="../build/build.js"></script>
     <script>
       var Counter = require('counter');
-      var counter = new Counter;
-      counter.digits(5);
+      var counter = new Counter();
+      // counter.digits(5);
       document.body.appendChild(counter.el);
       var n = 1;
       setInterval(function(){
