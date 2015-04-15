@@ -19,7 +19,7 @@ module.exports = Counter;
  */
 
 function Counter(el, options) {
-  if (this instanceof Counter) return new Counter(el, options);
+  if (!(this instanceof Counter)) return new Counter(el, options);
 
   options = options || {};
 
