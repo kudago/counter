@@ -16,12 +16,13 @@
     <script>
       var Counter = require('counter');
       var counter = new Counter();
-      // counter.digits(5);
+      counter.digits(5);
       document.body.appendChild(counter.el);
+      counter.update(12345);
       var n = 1;
       setInterval(function(){
         counter.update(n++);
-      }, 800);
+      }, 500);
     </script>
   </body>
 </html>

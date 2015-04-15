@@ -2,8 +2,9 @@
  * Module dependencies.
  */
 
-var domify = require('domify')
-  , digit = require('./digit.html');
+var domify = require('domify'),
+  digit = require('./digit.html'),
+  pad = require('left-pad');
 
 /**
  * Expose `Counter`.
@@ -108,13 +109,11 @@ Counter.prototype.updateDigit = function(i, val){
 
 Counter.prototype.update = function(n){
   this.n = n;
-  var str = n.toString();
-  var len = str.length;
-  var digits = Math.max(len, this.total);
+  var str = pad(n.toString(), this.total, '0');
 
-  this.ensureDigits(len);
-  for (var i = 0; i < len; ++i) {
-    this.updateDigit(digits - i - 1, str[len - i - 1]);
+  this.ensureDigits(this.total);
+  for (var i = 0; i < this.total; ++i) {
+    this.updateDigit(this.total - i - 1, str[this.total - i - 1]);
   }
 
   return this;

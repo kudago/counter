@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "domify": "^1.3.0",
-    "html-browserify": "0.0.4"
+    "html-browserify": "0.0.4",
+    "left-pad": "0.0.3"
   },
   "browserify": {
     "transform": "html-browserify"
