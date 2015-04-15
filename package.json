@@ -1,6 +1,6 @@
 {
   "name": "component-counter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple counter component",
   "main": "index.js",
   "directories": {
